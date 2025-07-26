@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Murtizapur Eggs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #fdfdfd;
+    }
+    h1 {
+      color: #333;
+    }
+    .card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 10px auto;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .btn {
+      padding: 10px 15px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #218838;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .tips {
+      margin-top: 30px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .tips h3 {
+      color: #444;
+    }
+    .tips ul {
+      padding-left: 20px;
+    }
+    .tips li {
+      margin-bottom: 10px;
+    }
+    input, textarea {
+      width: 90%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🥚 Murtizapur Eggs</h1>
+  <img src="eggs.jpg" alt="Fresh Eggs">
+  <p>Fresh Desi Eggs | Healthy & Nutritious | Local Delivery</p>
+
+  <div class="card">
+    <img src="eggs.jpg" alt="Desi Eggs">
+    <h2>🥚 Desi Eggs - ₹15 each</h2>
+
+    <input type="number" id="eggQty" placeholder="Enter quantity of eggs">
+    <textarea id="custAddr" placeholder="Enter your full delivery address"></textarea>
+    <br>
+    <a id="whatsappLink" href="#" class="btn" target="_blank">Order Now on WhatsApp</a>
+  </div>
+
+  <div class="tips">
+    <h3>🥚 Health Benefits of Desi Eggs</h3>
+    <ul>
+      <li>High in quality protein for muscle strength</li>
+      <li>Rich in Vitamin B12, good for energy</li>
+      <li>Supports brain health with choline</li>
+      <li>Improves eye health with lutein & zeaxanthin</li>
+      <li>Great for heart health when eaten in moderation</li>
+    </ul>
+  </div>
+
+  <script>
+    const link = document.getElementById('whatsappLink');
+    link.addEventListener('click', function() {
+      const qty = document.getElementById('eggQty').value;
+      const addr = document.getElementById('custAddr').value;
+      if (!qty || !addr) {
+        alert("Please enter egg quantity and address before ordering.");
+        return;
+      }
+      const phone = '918080267868'; // Change to your actual number
+      const msg = `Hi Sir, I want to order ${qty} eggs.%0AMy address is: ${encodeURIComponent(addr)}`;
+      this.href = `https://wa.me/${phone}?text=${msg}`;
+    });
+  </script>
+</body>
+</html>
